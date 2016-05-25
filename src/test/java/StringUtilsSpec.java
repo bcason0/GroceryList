@@ -1,4 +1,5 @@
 import io.bryantcason.*;
+import io.bryantcason.Error;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -29,7 +30,7 @@ public class StringUtilsSpec {
     }
 
     @Test
-    public void grabValueTest(){
+    public void grabValueTest() throws Error{
         String test = "naMe:Milk";
         String expectedValue = "Milk";
         String actualValue = StringUtils.grabValue(test);

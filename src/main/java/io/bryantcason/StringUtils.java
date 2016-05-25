@@ -18,7 +18,7 @@ public class StringUtils {
         return matcher.group();
     }
 
-    public static String grabValue(String test){
+    public static String grabValue(String test) throws Error{
         Matcher matcher = Pattern.compile("[^:]*$", Pattern.CASE_INSENSITIVE).matcher(test);
         matcher.find();
         return matcher.group();
@@ -27,7 +27,7 @@ public class StringUtils {
     public static String spellingCorrector(String misspelledWord){
         Matcher matcher = Pattern.compile("0", Pattern.CASE_INSENSITIVE).matcher(misspelledWord);
         matcher.find();
-        return matcher.replaceAll("o");
+        return matcher.replaceAll("");
     }
 
     public static String normalizeWord(String input){

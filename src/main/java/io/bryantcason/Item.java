@@ -30,4 +30,19 @@ public class Item {
     public int getNumberOfOccurrence(String price) {
         return priceOccurrence.get(price).intValue();
     }
+
+    public boolean checkPriceExist(String price){
+        return priceOccurrence.containsKey(price);
+    }
+
+    public String formattedToString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("name:\t"+name).append("\t\tseen: "+totalNumberOfOccurrence+"times\n")
+                .append("=============\t\t=============\n");
+        for(HashMap.Entry<String, Integer> entry: priceOccurrence.entrySet()){
+            stringBuilder.append("Price:\t"+entry.getKey()).append("\t\tseen: "+entry.getValue().intValue()+" times\n")
+                    .append("-------------\t\t-------------\n");
+        }
+        return stringBuilder.toString();
+    }
 }

@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by bryantcason on 5/24/16.
@@ -30,5 +31,15 @@ public class ItemSpec {
         int expectedValue = 1;
         int actualValue = item.getNumberOfOccurrence("3.10");
         assertEquals("Should occur once", expectedValue, actualValue);
+    }
+
+    @Test
+    public void checkPriceExistTest(){
+        assertTrue(item.checkPriceExist("3.10"));
+    }
+
+    @Test
+    public void formattedToString(){
+
     }
 }
